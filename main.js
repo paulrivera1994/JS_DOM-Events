@@ -110,12 +110,12 @@ function show() {
   const modalCloseBtn = document.createElement("btn");
   modalCloseBtn.textContent = "x";
   modalCloseBtn.style.border = "3px solid teal";
-  modalCloseBtn.style.fontSize = "1.5rem";
-  modalCloseBtn.style.background = "teal";
   modalCard.append(modalCloseBtn);
-
+  modalCloseBtn.addEventListener("click", () => {
+    modalDiv.remove();
+  });
   modalDiv.addEventListener("click", (event) => {
-    if (event.target == modalDiv) {
+    if (event.target == modalDiv || event.target == modalCloseBtn) {
       modalDiv.remove();
     }
   });
